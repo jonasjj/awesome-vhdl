@@ -67,9 +67,11 @@ When you type a snippet in a VHDL file and hit Enter, the plugin will generate t
 
 The VHDLwhiz edition of awesome-vhdl is not on Visual Studio Marketplace. You have to install it from file.
 
-1. Download [vhdlwhiz.awesome-vhdl.vsix](https://github.com/jonasjj/awesome-vhdl/blob/master/vhdlwhiz.awesome-vhdl.vsix) from the Git repository.
-2. In VSCode, hit Ctrl+Shift+P to bring up the command palette.
+1. Download the [latest release](https://github.com/jonasjj/awesome-vhdl/releases/latest) from GitHub
+2. In VSCode, hit Ctrl+Shift+P to bring up the command palette
 3. Type "install from vsix" and hit Enter
+4. Select the .vsix file to install
+5. Open a VHDL file and start typing a snippet
 
 ## License
 This extension is licensed under the MIT License. Please see the
