@@ -3,7 +3,7 @@
     "displayName": "VHDL (VHDLwhiz edition)",
     "description": "Snippets, syntax highlighting, code completion and so on",
     "version": "1.1.0",
-    "publisher": "VHDLwhiz.com",
+    "publisher": "vhdlwhiz",
     "icon": "images/icon.png",
     "homepage": "https://github.com/jonasjj/awesome-vhdl/blob/master/README.md",
     "repository": {
@@ -18,21 +18,33 @@
         "Snippets"
     ],
     "activationEvents": [
-       "onLanguage:vhdl"
+        "onLanguage:vhdl"
     ],
     "main": "./out/src/vhdlMain",
     "contributes": {
-        "languages": [{
-            "id": "vhdl",
-            "aliases": ["VHDL", "vhdl"],
-            "extensions": [".vhd",".vhdl",".vho",".vht"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "vhdl",
-            "scopeName": "source.vhdl",
-            "path": "./syntaxes/vhdl.tmLanguage"
-        }],
+        "languages": [
+            {
+                "id": "vhdl",
+                "aliases": [
+                    "VHDL",
+                    "vhdl"
+                ],
+                "extensions": [
+                    ".vhd",
+                    ".vhdl",
+                    ".vho",
+                    ".vht"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "vhdl",
+                "scopeName": "source.vhdl",
+                "path": "./syntaxes/vhdl.tmLanguage"
+            }
+        ],
         "snippets": [
             {
                 "language": "vhdl",
