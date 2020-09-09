@@ -1,8 +1,10 @@
-# Awesome VHDL (VHDLwhiz edition)
+# Awesome VHDL by VHDLwhiz
 
 VHDL support for Visual Studio Code
 
-[This fork](https://github.com/jonasjj/awesome-vhdl) of the [awesome-vhdl](https://github.com/puorc/awesome-vhdl) plugin has altered snippets that conform to the [VHDLwhiz](https://vhdlwhiz.com) coding style. 
+[VHDL by VHDLwhiz](https://github.com/jonasjj/awesome-vhdl) is a fork of the [puorc.awesome-vhdl](https://github.com/puorc/awesome-vhdl) plugin with altered  snippets that conform to the [VHDLwhiz](https://vhdlwhiz.com) coding style. It includes templates for VHDL modules, testbenches, and ModelSim DO scripts.
+
+I've forked my favorite VHDL plugin to make it better. Save time by using this plugin to generate the initial project files for you!
 
 ## Features
 - syntax highlighting
@@ -11,7 +13,13 @@ VHDL support for Visual Studio Code
 - brace matching
 - line and block commenting
 
-## VHDLwhiz-style snippets
+## DO script (Tcl) snippets
+
+| Snippet       | Description                                   |
+|          ---: |                                          ---: |
+| modelsimrundo | Generate a run.do script for a VHDL testbench |
+
+## VHDL snippets
 
 When you type a snippet in a VHDL file and hit Enter, the plugin will generate template code for you. Then, use the Tab key to move the cursor to the next placeholder.
 
@@ -65,15 +73,7 @@ When you type a snippet in a VHDL file and hit Enter, the plugin will generate t
 
 ## Installation
 
-The VHDLwhiz edition of awesome-vhdl is not on Visual Studio Marketplace. You have to install it from file.
-
-1. Download the [latest release](https://github.com/jonasjj/awesome-vhdl/releases/latest) from GitHub
-2. In VSCode, hit Ctrl+Shift+P to bring up the command palette
-3. Type "install from vsix" and hit Enter
-4. Select the .vsix file to install
-5. Open a VHDL file and start typing a snippet
+Install from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vhdlwhiz.vhdl-by-vhdlwhiz) or by searching for "**vhdlwhiz.vhdl-by-vhdlwhiz**" in the Extension view (Ctrl+Shift+X) in VSCode.
 
 ## License
-This extension is licensed under the MIT License. Please see the
-third-party notices file for details on the third-party
-binaries that we include with releases of this project.
+This extension is licensed under the MIT License. Please see the third-party notices file for details on the third-party binaries that we include with releases of this project.
