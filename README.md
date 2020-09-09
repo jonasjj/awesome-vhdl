@@ -31,15 +31,17 @@ When you type a snippet in a VHDL file and hit Enter, the plugin will generate t
 | asf     | assert failure               |
 | arch    | architecture                 |
 | c       | constant                     |
-| cas     | case                         |
+| ca      | case                         |
+| decr    | sig <= sig - 1               |
 | el      | else                         |
 | eli     | elsif                        |
 | ent     | entity                       |
 | entarch | entity architecture          |
-| f       | for loop                     |
+| fo      | for loop                     |
 | fun     | function                     |
 | gen     | for generate                 |
 | i       | if else                      |
+| incr    | sig <= sig + 1               |
 | int     | integer                      |
 | intd    | integer range x downto y     |
 | intt    | integer range x to y         |
@@ -48,25 +50,36 @@ When you type a snippet in a VHDL file and hit Enter, the plugin will generate t
 | pack    | package                      |
 | pro     | process                      |
 | proar   | asynch process with reset    |
+| profsm  | FSM process                  |
 | pros    | synch process                |
 | prosr   | synch process with reset     |
 | proc    | procedure                    |
 | rep     | report a message             |
 | s       | signal                       |
-| sig     | signed(x downto y)           |
-| sigr    | signed(sig'range)            |
+| si      | signed                       |
+| sid     | signed(x downto y)           |
+| sit     | signed(x to y)               |
+| sir     | signed(sig'range)            |
 | sl      | std_logic                    |
-| slv     | std_logic_vector(x downto y) |
+| slv     | std_logic_vector             |
+| slvd    | std_logic_vector(x downto y) |
+| slvt    | std_logic_vector(x to y)     |
 | slvr    | std_logic_vector(sig'range)  |
+| toi     | to_integer(sig)              |
+| tos     | to_signed(-1, sig'length)    |
+| tou     | to_unsigned(0, sig'length)   |
 | typarr  | array type                   |
 | typfsm  | FSM type/signal              |
 | typrec  | record type                  |
-| uns     | unsigned(x downto y)         |
-| unsr    | unsigned(sig'range)          |
+| un      | unsigned                     |
+| und     | unsigned(x downto y)         |
+| unt     | unsigned(x to y)             |
+| unr     | unsigned(sig'range)          |
 | v       | variable                     |
 | vhdl    | VHDL template                |
 | vhdltb  | VHDL testbench template      |
-| w       | while                        |
+| w       | when STATE =>                |
+| wh      | while loop                   |
 | wf      | wait for                     |
 | wo      | wait on                      |
 | wu      | wait until                   |                

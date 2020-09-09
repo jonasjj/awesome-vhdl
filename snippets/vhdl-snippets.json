@@ -35,8 +35,8 @@
 		"description": "constant",
 		"scope": "source.vhdl"
 	},
-	"cas": {
-		"prefix": "cas",
+	"ca": {
+		"prefix": "ca",
 		"body": "case ${1:sig} is\n\n\twhen ${2:IDLE} =>\n\t\t$0\n\n\twhen others =>\n\nend case;",
 		"description": "case",
 		"scope": "source.vhdl"
@@ -65,8 +65,8 @@
 		"description": "entity architecture",
 		"scope": "source.vhdl"
 	},
-	"f": {
-		"prefix": "f",
+	"fo": {
+		"prefix": "fo",
 		"body": "for ${1:i} in ${2:0} to ${3:7} loop\n\t$0\nend loop;",
 		"description": "for loop",
 		"scope": "source.vhdl"
@@ -87,6 +87,18 @@
 		"prefix": "i",
 		"body": "if ${1:true} then\n\t$0${2:\nelse\n\t}\nend if;",
 		"description": "if else",
+		"scope": "source.vhdl"
+	},
+	"incr": {
+		"prefix": "incr",
+		"body": "${1:counter} <= ${1:counter} + 1;",
+		"description": "s <= s + 1;",
+		"scope": "source.vhdl"
+	},
+	"decr": {
+		"prefix": "decr",
+		"body": "${1:counter} <= ${1:counter} - 1;",
+		"description": "s <= s - 1;",
 		"scope": "source.vhdl"
 	},
 	"int": {
@@ -143,9 +155,15 @@
 		"description": "synch process",
 		"scope": "source.vhdl"
 	},
+	"profsm": {
+		"prefix": "profsm",
+		"body": "FSM_PROC : process(clk)\nbegin\n\tif rising_edge(clk) then\n\t\tif rst = '1' then\n\t\t\t${1:state} <= ${2:IDLE};\n\n\t\telse\n\t\t\tcase ${1:state} is\n\n\t\t\t\twhen ${2:IDLE} =>\n\t\t\t\t\t$0\n\n\t\t\tend case;\n\n\t\tend if;\n\tend if;\nend process;",
+		"description": "FSM process",
+		"scope": "source.vhdl"
+	},
 	"prosr": {
 		"prefix": "prosr",
-		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(clk)\nbegin\n\tif rising_edge(clk) then\n\t\tif rst = '1' then\n\t\t\t$2\n\t\t\t\n\t\telse\n\t\t\t$0\n\t\t\t\n\t\tend if;\n\tend if;\nend process;",
+		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(clk)\nbegin\n\tif rising_edge(clk) then\n\t\tif rst = '1' then\n\t\t\t$0\n\t\t\t\n\t\telse\n\t\t\t\n\t\t\t\n\t\tend if;\n\tend if;\nend process;",
 		"description": "synch process with reset",
 		"scope": "source.vhdl"
 	},
@@ -167,14 +185,26 @@
 		"description": "signal",
 		"scope": "source.vhdl"
 	},
-	"sig": {
-		"prefix": "sig",
+	"si": {
+		"prefix": "si",
+		"body": "signed",
+		"description": "signed",
+		"scope": "source.vhdl"
+	},
+	"sid": {
+		"prefix": "sid",
 		"body": "signed(${1:7} downto ${2:0})$0",
 		"description": "signed(x downto y)",
 		"scope": "source.vhdl"
 	},
-	"sigr": {
-		"prefix": "sigr",
+	"sit": {
+		"prefix": "sit",
+		"body": "signed(${1:0} to ${2:7})$0",
+		"description": "signed(x to y)",
+		"scope": "source.vhdl"
+	},
+	"sir": {
+		"prefix": "sir",
 		"body": "signed(${1:sig}'range)$0",
 		"description": "signed(sig'range)",
 		"scope": "source.vhdl"
@@ -187,7 +217,19 @@
 	},
 	"slv": {
 		"prefix": "slv",
+		"body": "std_logic_vector",
+		"description": "std_logic_vector",
+		"scope": "source.vhdl"
+	},
+	"slvd": {
+		"prefix": "slvd",
 		"body": "std_logic_vector(${1:7} downto ${2:0})$0",
+		"description": "std_logic_vector(x downto y)",
+		"scope": "source.vhdl"
+	},
+	"slvt": {
+		"prefix": "slvt",
+		"body": "std_logic_vector(${1:0} to ${2:7})$0",
 		"description": "std_logic_vector(x downto y)",
 		"scope": "source.vhdl"
 	},
@@ -195,6 +237,24 @@
 		"prefix": "slvr",
 		"body": "std_logic_vector(${1:sig}'range)$0",
 		"description": "std_logic_vector(sig'range)",
+		"scope": "source.vhdl"
+	},
+	"toi": {
+		"prefix": "toi",
+		"body": "to_integer(${1:sig})$0",
+		"description": "to_integer(sig)",
+		"scope": "source.vhdl"
+	},
+	"tos": {
+		"prefix": "tos",
+		"body": "to_signed(${1:-1}, ${2:sig}'length)$0",
+		"description": "to_signed(-1, sig'length)",
+		"scope": "source.vhdl"
+	},
+	"tou": {
+		"prefix": "tou",
+		"body": "to_unsigned(${0}, ${2:sig}'length)$0",
+		"description": "to_unsigned(0, sig'length)",
 		"scope": "source.vhdl"
 	},
 	"typarr": {
@@ -215,14 +275,26 @@
 		"description": "record type",
 		"scope": "source.vhdl"
 	},
-	"uns": {
-		"prefix": "uns",
+	"un": {
+		"prefix": "un",
+		"body": "unsigned",
+		"description": "unsigned",
+		"scope": "source.vhdl"
+	},
+	"und": {
+		"prefix": "und",
 		"body": "unsigned(${1:7} downto ${2:0})$0",
 		"description": "unsigned(x downto y)",
 		"scope": "source.vhdl"
 	},
-	"unsr": {
-		"prefix": "unsr",
+	"unt": {
+		"prefix": "unt",
+		"body": "unsigned(${1:0} to ${2:7})$0",
+		"description": "unsigned(x to y)",
+		"scope": "source.vhdl"
+	},
+	"unr": {
+		"prefix": "unr",
 		"body": "unsigned(${1:sig}'range)$0",
 		"description": "unsigned(sig'range)",
 		"scope": "source.vhdl"
@@ -247,6 +319,12 @@
 	},
 	"w": {
 		"prefix": "w",
+		"body": "when ${1:STATE} =>\n\t$0",
+		"description": "when STATE =>",
+		"scope": "source.vhdl"
+	},
+	"wh": {
+		"prefix": "wh",
 		"body": "while ${2:true} loop\n\t$0\nend loop;",
 		"description": "while",
 		"scope": "source.vhdl"
