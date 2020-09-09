@@ -313,7 +313,7 @@
 	},
 	"vhdltb": {
 		"prefix": "vhdltb",
-		"body": "library ieee;\nuse ieee.std_logic_1164.all;\nuse ieee.numeric_std.all;\n\nuse std.textio.all;\nuse std.env.finish;\n\nentity ${1:dutent}_tb is\nend ${1:dutent}_tb;\n\narchitecture sim of ${1:dutent}_tb is\n\n\tconstant clk_hz : integer := ${2:100e6};\n\tconstant clk_period : time := 1 sec / clk_hz;\n\n\tsignal clk : std_logic := '1';\n\tsignal rst : std_logic := '0';\n\nbegin\n\n\tclk <= not clk after clk_period / 2;\n\n\tDUT : entity work.${1:dutent}(rtl)\n\tport map (\n\t\tclk => clk,\n\t\trst => rst,\n\t\t$0\n\t);\n\n\tSEQUENCER_PROC : process\n\tbegin\n\t\twait for clk_period * 2;\n\n\t\trst <= '0';\n\t\twait for clk_period * 10;\n\t\tassert false\n\t\t\treport \"Replace this with your test cases\"\n\t\t\tseverity failure;\n\n\t\tfinish;\n\tend process;\n\nend architecture;",
+		"body": "library ieee;\nuse ieee.std_logic_1164.all;\nuse ieee.numeric_std.all;\n\nuse std.textio.all;\nuse std.env.finish;\n\nentity ${1:dutent}_tb is\nend ${1:dutent}_tb;\n\narchitecture sim of ${1:dutent}_tb is\n\n\tconstant clk_hz : integer := ${2:100e6};\n\tconstant clk_period : time := 1 sec / clk_hz;\n\n\tsignal clk : std_logic := '1';\n\tsignal rst : std_logic := '1';\n\nbegin\n\n\tclk <= not clk after clk_period / 2;\n\n\tDUT : entity work.${1:dutent}(rtl)\n\tport map (\n\t\tclk => clk,\n\t\trst => rst,\n\t\t$0\n\t);\n\n\tSEQUENCER_PROC : process\n\tbegin\n\t\twait for clk_period * 2;\n\n\t\trst <= '0';\n\n\t\twait for clk_period * 10;\n\t\tassert false\n\t\t\treport \"Replace this with your test cases\"\n\t\t\tseverity failure;\n\n\t\tfinish;\n\tend process;\n\nend architecture;",
 		"description": "VHDL testbench template",
 		"scope": "source.vhdl"
 	},
