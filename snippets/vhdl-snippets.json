@@ -1,31 +1,31 @@
 {
 	"as": {
 		"prefix": "as",
-		"body": "assert ${1:false}\n\treport \"${2:The expression is false}\";\n$0",
+		"body": "assert ${1:false}\n  report \"${2:The expression is false}\";\n$0",
 		"description": "assert default severity",
 		"scope": "source.vhdl"
 	},
 	"asw": {
 		"prefix": "asw",
-		"body": "assert ${1:false}\n\treport \"${2:The expression is false}\"\n\tseverity warning;\n$0",
+		"body": "assert ${1:false}\n  report \"${2:The expression is false}\"\n  severity warning;\n$0",
 		"description": "assert warning",
 		"scope": "source.vhdl"
 	},
 	"ase": {
 		"prefix": "ase",
-		"body": "assert ${1:false}\n\treport \"${2:The expression is false}\"\n\tseverity error;\n$0",
+		"body": "assert ${1:false}\n  report \"${2:The expression is false}\"\n  severity error;\n$0",
 		"description": "assert error",
 		"scope": "source.vhdl"
 	},
 	"asf": {
 		"prefix": "asf",
-		"body": "assert ${1:false}\n\treport \"${2:The expression is false}\"\n\tseverity failure;\n$0",
+		"body": "assert ${1:false}\n  report \"${2:The expression is false}\"\n  severity failure;\n$0",
 		"description": "assert failure",
 		"scope": "source.vhdl"
 	},
 	"arch": {
 		"prefix": "arch",
-		"body": "architecture ${1:rtl} of ${2:ent} is\n\n\tsignal $0\n\nbegin\n\nend architecture;",
+		"body": "architecture ${1:rtl} of ${2:ent} is\n\n  signal $0\n\nbegin\n\nend architecture;",
 		"description": "architecture",
 		"scope": "source.vhdl"
 	},
@@ -37,55 +37,55 @@
 	},
 	"ca": {
 		"prefix": "ca",
-		"body": "case ${1:sig} is\n\n\twhen ${2:IDLE} =>\n\t\t$0\n\n\twhen others =>\n\nend case;",
+		"body": "case ${1:sig} is\n\n  when ${2:IDLE} =>\n    $0\n\n  when others =>\n\nend case;",
 		"description": "case",
 		"scope": "source.vhdl"
 	},
 	"el": {
 		"prefix": "el",
-		"body": "else\n\t$0",
+		"body": "else\n  $0",
 		"description": "else",
 		"scope": "source.vhdl"
 	},
 	"eli": {
 		"prefix": "eli",
-		"body": "elsif ${1:true} then\n\t$0",
+		"body": "elsif ${1:true} then\n  $0",
 		"description": "elsif",
 		"scope": "source.vhdl"
 	},
 	"ent": {
 		"prefix": "ent",
-		"body": "entity ${1:ent} is\n\tport (\n\t\t${2:clk : in std_logic;\n\t\trst : in std_logic;}\n\t\t${0:sig}\n\t);\nend ${1:ent};",
+		"body": "entity ${1:ent} is\n  port (\n    ${2:clk : in std_logic;\n    rst : in std_logic;}\n    ${0:sig}\n  );\nend ${1:ent};",
 		"description": "entity",
 		"scope": "source.vhdl"
 	},
 	"entarch": {
 		"prefix": "entarch",
-		"body": "entity ${1:ent} is\n\tport (\n\t\t${3:clk : in std_logic;\n\t\trst : in std_logic;}\n\t\t${0:sig}\n\t);\nend ${1:ent};\n\narchitecture ${2:rtl} of ${1:ent} is\n\n\n\nbegin\n\n\n\nend architecture;",
+		"body": "entity ${1:ent} is\n  port (\n    ${3:clk : in std_logic;\n    rst : in std_logic;}\n    ${0:sig}\n  );\nend ${1:ent};\n\narchitecture ${2:rtl} of ${1:ent} is\n\n\n\nbegin\n\n\n\nend architecture;",
 		"description": "entity architecture",
 		"scope": "source.vhdl"
 	},
 	"fo": {
 		"prefix": "fo",
-		"body": "for ${1:i} in ${2:0} to ${3:7} loop\n\t$0\nend loop;",
+		"body": "for ${1:i} in ${2:0} to ${3:7} loop\n  $0\nend loop;",
 		"description": "for loop",
 		"scope": "source.vhdl"
 	},
 	"fun": {
 		"prefix": "fun",
-		"body": "function name(${1:params}) return ${12:boolean} is\nbegin\n\t$0\nend function;",
+		"body": "function name(${1:params}) return ${12:boolean} is\nbegin\n  $0\nend function;",
 		"description": "function",
 		"scope": "source.vhdl"
 	},
 	"gen": {
 		"prefix": "gen",
-		"body": "${1/(.*)/${1:/upcase}/}_GEN : for ${2:i} in ${3:0} to ${4:7} generate\n\t$0\nend generate;",
+		"body": "${1/(.*)/${1:/upcase}/}_GEN : for ${2:i} in ${3:0} to ${4:7} generate\n  $0\nend generate;",
 		"description": "for generate",
 		"scope": "source.vhdl"
 	},
 	"i": {
 		"prefix": "i",
-		"body": "if ${1:true} then\n\t$0${2:\nelse\n\t}\nend if;",
+		"body": "if ${1:true} then\n  $0${2:\nelse\n  }\nend if;",
 		"description": "if else",
 		"scope": "source.vhdl"
 	},
@@ -133,43 +133,43 @@
 	},
 	"pack": {
 		"prefix": "pack",
-		"body": "package ${1:pkg} is\n\t$0\nend package;${2:\n\npackage body ${1:pck} is\n\nend package body;}",
+		"body": "package ${1:pkg} is\n  $0\nend package;${2:\n\npackage body ${1:pck} is\n\nend package body;}",
 		"description": "package",
 		"scope": "source.vhdl"
 	},
 	"pro": {
 		"prefix": "pro",
-		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(${2:sensitivity_list})\nbegin\n\t$0\nend process;",
+		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(${2:sensitivity_list})\nbegin\n  $0\nend process;",
 		"description": "process",
 		"scope": "source.vhdl"
 	},
 	"proar": {
 		"prefix": "proar",
-		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(clk, rst)\nbegin\n\tif rst = '1' then\n\t\t$0\n\n\telsif rising_edge(clk) then\n\n\n\tend if;\nend process;\n",
+		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(clk, rst)\nbegin\n  if rst = '1' then\n    $0\n\n  elsif rising_edge(clk) then\n\n\n  end if;\nend process;\n",
 		"description": "asynch process with reset",
 		"scope": "source.vhdl"
 	},
 	"pros": {
 		"prefix": "pros",
-		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(clk)\nbegin\n\tif rising_edge(clk) then\n\t\t$0\n\tend if;\nend process;",
+		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(clk)\nbegin\n  if rising_edge(clk) then\n    $0\n  end if;\nend process;",
 		"description": "synch process",
 		"scope": "source.vhdl"
 	},
 	"profsm": {
 		"prefix": "profsm",
-		"body": "FSM_PROC : process(clk)\nbegin\n\tif rising_edge(clk) then\n\t\tif rst = '1' then\n\t\t\t${1:state} <= ${2:IDLE};\n\n\t\telse\n\t\t\tcase ${1:state} is\n\n\t\t\t\twhen ${2:IDLE} =>\n\t\t\t\t\t$0\n\n\t\t\tend case;\n\n\t\tend if;\n\tend if;\nend process;",
+		"body": "FSM_PROC : process(clk)\nbegin\n  if rising_edge(clk) then\n    if rst = '1' then\n      ${1:state} <= ${2:IDLE};\n\n    else\n      case ${1:state} is\n\n        when ${2:IDLE} =>\n          $0\n\n      end case;\n\n    end if;\n  end if;\nend process;",
 		"description": "FSM process",
 		"scope": "source.vhdl"
 	},
 	"prosr": {
 		"prefix": "prosr",
-		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(clk)\nbegin\n\tif rising_edge(clk) then\n\t\tif rst = '1' then\n\t\t\t$0\n\t\t\t\n\t\telse\n\t\t\t\n\t\t\t\n\t\tend if;\n\tend if;\nend process;",
+		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(clk)\nbegin\n  if rising_edge(clk) then\n    if rst = '1' then\n      $0\n      \n    else\n      \n      \n    end if;\n  end if;\nend process;",
 		"description": "synch process with reset",
 		"scope": "source.vhdl"
 	},
 	"proc": {
 		"prefix": "proc",
-		"body": "procedure ${1:name}(${2:params}) is\nbegin\n\t$0\nend procedure;",
+		"body": "procedure ${1:name}(${2:params}) is\nbegin\n  $0\nend procedure;",
 		"description": "procedure",
 		"scope": "source.vhdl"
 	},
@@ -271,7 +271,7 @@
 	},
 	"typrec": {
 		"prefix": "typrec",
-		"body": "type ${1:rec}_type is record\n\t$0\nend record;",
+		"body": "type ${1:rec}_type is record\n  $0\nend record;",
 		"description": "record type",
 		"scope": "source.vhdl"
 	},
@@ -307,25 +307,25 @@
 	},
 	"vhdl": {
 		"prefix": "vhdl",
-		"body": "library ieee;\nuse ieee.std_logic_1164.all;\nuse ieee.numeric_std.all;\n\nentity ${1:ent} is\n\tport (\n${3:\t\tclk : in std_logic;\n\t\trst : in std_logic;}\n\t\t${0:sig}\n\t);\nend ${1:ent};\n\narchitecture ${2:rtl} of ${1:ent} is\n\nbegin\n\nend architecture;",
+		"body": "library ieee;\nuse ieee.std_logic_1164.all;\nuse ieee.numeric_std.all;\n\nentity ${1:ent} is\n  port (\n${3:    clk : in std_logic;\n    rst : in std_logic;}\n    ${0:sig}\n  );\nend ${1:ent};\n\narchitecture ${2:rtl} of ${1:ent} is\n\nbegin\n\nend architecture;",
 		"description": "VHDL template",
 		"scope": "source.vhdl"
 	},
 	"vhdltb": {
 		"prefix": "vhdltb",
-		"body": "library ieee;\nuse ieee.std_logic_1164.all;\nuse ieee.numeric_std.all;\n\nuse std.textio.all;\nuse std.env.finish;\n\nentity ${1:dutent}_tb is\nend ${1:dutent}_tb;\n\narchitecture sim of ${1:dutent}_tb is\n\n\tconstant clk_hz : integer := ${2:100e6};\n\tconstant clk_period : time := 1 sec / clk_hz;\n\n\tsignal clk : std_logic := '1';\n\tsignal rst : std_logic := '1';\n\nbegin\n\n\tclk <= not clk after clk_period / 2;\n\n\tDUT : entity work.${1:dutent}(rtl)\n\tport map (\n\t\tclk => clk,\n\t\trst => rst,\n\t\t$0\n\t);\n\n\tSEQUENCER_PROC : process\n\tbegin\n\t\twait for clk_period * 2;\n\n\t\trst <= '0';\n\n\t\twait for clk_period * 10;\n\t\tassert false\n\t\t\treport \"Replace this with your test cases\"\n\t\t\tseverity failure;\n\n\t\tfinish;\n\tend process;\n\nend architecture;",
+		"body": "library ieee;\nuse ieee.std_logic_1164.all;\nuse ieee.numeric_std.all;\n\nuse std.textio.all;\nuse std.env.finish;\n\nentity ${1:dutent}_tb is\nend ${1:dutent}_tb;\n\narchitecture sim of ${1:dutent}_tb is\n\n  constant clk_hz : integer := ${2:100e6};\n  constant clk_period : time := 1 sec / clk_hz;\n\n  signal clk : std_logic := '1';\n  signal rst : std_logic := '1';\n\nbegin\n\n  clk <= not clk after clk_period / 2;\n\n  DUT : entity work.${1:dutent}(rtl)\n  port map (\n    clk => clk,\n    rst => rst,\n    $0\n  );\n\n  SEQUENCER_PROC : process\n  begin\n    wait for clk_period * 2;\n\n    rst <= '0';\n\n    wait for clk_period * 10;\n    assert false\n      report \"Replace this with your test cases\"\n      severity failure;\n\n    finish;\n  end process;\n\nend architecture;",
 		"description": "VHDL testbench template",
 		"scope": "source.vhdl"
 	},
 	"w": {
 		"prefix": "w",
-		"body": "when ${1:STATE} =>\n\t$0",
+		"body": "when ${1:STATE} =>\n  $0",
 		"description": "when STATE =>",
 		"scope": "source.vhdl"
 	},
 	"wh": {
 		"prefix": "wh",
-		"body": "while ${2:true} loop\n\t$0\nend loop;",
+		"body": "while ${2:true} loop\n  $0\nend loop;",
 		"description": "while",
 		"scope": "source.vhdl"
 	},
