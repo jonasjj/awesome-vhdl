@@ -11,11 +11,11 @@ I've forked my favorite VHDL plugin to make it better. Save time by using this p
 [![Demo of the VHDL by VHDLwhiz VSCode plugin](https://raw.githubusercontent.com/jonasjj/awesome-vhdl/master/images/youtube-thumb.png)](https://youtu.be/V7zlAAjid98)
 
 ## Features
-- syntax highlighting
-- code snippets
-- code completion
-- brace matching
-- line and block commenting
+- Syntax highlighting
+- Code snippets
+- Code completion
+- Brace matching
+- Line and block commenting
 
 ## DO script (Tcl) snippets
 
