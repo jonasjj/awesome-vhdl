@@ -145,7 +145,7 @@
 	},
 	"proar": {
 		"prefix": "proar",
-		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(clk, rst)\nbegin\n\tif rst = '1' then\n\t\t$0\n\n\telsif rising_edge(clk) then\n\n\n\tend if;\nend process;\n",
+		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(clk, rst)\nbegin\n\tif rst = '1' then\n\t\t$0\n\n\telsif rising_edge(clk) then\n\n\n\tend if;\nend process;",
 		"description": "asynch process with reset",
 		"scope": "source.vhdl"
 	},
@@ -307,7 +307,7 @@
 	},
 	"vhdl": {
 		"prefix": "vhdl",
-		"body": "library ieee;\nuse ieee.std_logic_1164.all;\nuse ieee.numeric_std.all;\n\nentity ${1:ent} is\n\tport (\n${3:\t\tclk : in std_logic;\n\t\trst : in std_logic;}\n\t\t${0:sig}\n\t);\nend ${1:ent};\n\narchitecture ${2:rtl} of ${1:ent} is\n\nbegin\n\nend architecture;",
+		"body": "library ieee;\nuse ieee.std_logic_1164.all;\nuse ieee.numeric_std.all;\n\nentity ${1:ent} is\n\tport (${3:\n\t\tclk : in std_logic;\n\t\trst : in std_logic;}\n\t\t${0:sig}\n\t);\nend ${1:ent};\n\narchitecture ${2:rtl} of ${1:ent} is\n\nbegin\n\nend architecture;",
 		"description": "VHDL template",
 		"scope": "source.vhdl"
 	},
