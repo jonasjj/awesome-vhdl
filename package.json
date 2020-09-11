@@ -6,9 +6,14 @@
     "publisher": "vhdlwhiz",
     "icon": "images/icon.png",
     "homepage": "https://github.com/jonasjj/awesome-vhdl/blob/master/README.md",
+    "license": "MIT License",
     "repository": {
         "type": "git",
         "url": "https://github.com/jonasjj/awesome-vhdl"
+    },
+    "bugs": {
+        "url" : "https://github.com/jonasjj/awesome-vhdl/issues",
+        "email": "jonas@vhdlwhiz.com"
     },
     "engines": {
         "vscode": "^1.5.0"
