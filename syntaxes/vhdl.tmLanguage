@@ -191,8 +191,8 @@
 							<string>punctuation.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.attribute_list</string>
+					<!-- <key>name</key>
+					<string>meta.block.attribute_list</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -311,8 +311,8 @@
 							<string>invalid.illegal.mismatched.identifier.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.case.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.case.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -416,8 +416,8 @@
 							<string>punctuation.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.component_instantiation.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.component_instantiation.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -513,8 +513,8 @@
 							<string>invalid.illegal.mismatched.identifier.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.component.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.component.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -741,8 +741,8 @@
 							<string>punctuation.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.entity_instantiation.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.entity_instantiation.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -829,8 +829,8 @@
 							<string>invalid.illegal.mismatched.identifier.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.entity.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.entity.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -944,8 +944,8 @@
 							<string>invalid.illegal.mismatched.identifier.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.for.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.for.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1076,8 +1076,8 @@
 							<string>invalid.illegal.mismatched.identifier.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.function_definition.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.function_definition.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1167,8 +1167,8 @@
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=;)</string>
-					<key>name</key>
-					<string>meta.block.function_prototype.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.function_prototype.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1241,8 +1241,8 @@
 							<string>punctuation.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.generic_list.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.generic_list.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1345,8 +1345,8 @@
 							<string>invalid.illegal.mismatched.identifier.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.if.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.if.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1486,8 +1486,8 @@
 							<string>invalid.illegal.mismatched.identifier.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.package_body.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.package_body.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1593,8 +1593,8 @@
 							<string>invalid.illegal.mismatched.identifier.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.package.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.package.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1646,8 +1646,8 @@
 					</dict>
 					<key>end</key>
 					<string>(?&lt;=\))</string>
-					<key>name</key>
-					<string>meta.block.parenthetical_list.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.parenthetical_list.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1664,7 +1664,7 @@
 								</dict>
 							</dict>
 							<key>name</key>
-							<string>meta.list.element.vhdl</string>
+							<string>source.vhdl</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -1720,8 +1720,8 @@
 							<string>punctuation.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.parenthetical_pair.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.parenthetical_pair.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1761,8 +1761,8 @@
 							<string>punctuation.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.port_list.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.port_list.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1861,8 +1861,8 @@
 							<string>invalid.illegal.mismatched.identifier.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.procedure_definition.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.procedure_definition.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1928,8 +1928,8 @@
 							<string>punctual.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.procedure_prototype.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.procedure_prototype.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -2015,8 +2015,8 @@
 							<string>invalid.illegal.invalid.identifier.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.process.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.process.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -2095,8 +2095,8 @@
 							<string>invalid.illegal.invalid.identifier.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.record.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.record.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -2197,8 +2197,8 @@
 							<string>punctuation.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.subtype.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.subtype.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -2391,8 +2391,8 @@
 							<string>punctuation.vhdl</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.type.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.type.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -2491,8 +2491,8 @@
 							<string>invalid.illegal.mismatched.identifier</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.block.while.vhdl</string>
+					<!-- <key>name</key>
+					<string>meta.block.while.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
