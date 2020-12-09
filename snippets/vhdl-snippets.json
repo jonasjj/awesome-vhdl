@@ -65,6 +65,12 @@
 		"description": "entity architecture",
 		"scope": "source.vhdl"
 	},
+	"fa": {
+		"prefix": "fa",
+		"body": "falling_edge(${1:clk}) $0",
+		"description": "falling_edge()",
+		"scope": "source.vhdl"
+	},
 	"fo": {
 		"prefix": "fo",
 		"body": "for ${1:i} in ${2:0} to ${3:7} loop\n\t$0\nend loop;",
@@ -177,6 +183,12 @@
 		"prefix": "rep",
 		"body": "report \"${1:This is a message}\";\n$0",
 		"description": "report a message",
+		"scope": "source.vhdl"
+	},
+	"ri": {
+		"prefix": "ri",
+		"body": "rising_edge(${1:clk}) $0",
+		"description": "rising_edge()",
 		"scope": "source.vhdl"
 	},
 	"s": {

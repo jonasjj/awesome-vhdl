@@ -6,6 +6,10 @@ VHDL support for Visual Studio Code
 
 I've forked my favorite VHDL plugin to make it better. Save time by using this plugin to generate the initial project files for you!
 
+## What's new in version 1.2.7
+- **ri** - rising_edge() snippet
+- **fa** - falling_edge() snippet
+
 ## Demo video
 
 [![Demo of the VHDL by VHDLwhiz VSCode plugin](https://raw.githubusercontent.com/jonasjj/awesome-vhdl/master/images/youtube-thumb.png)](https://youtu.be/V7zlAAjid98)
@@ -41,6 +45,7 @@ When you type a snippet in a VHDL file and hit Enter, the plugin will generate t
 | eli     | elsif                        |
 | ent     | entity                       |
 | entarch | entity architecture          |
+| fa      | falling_edge()               |
 | fo      | for loop                     |
 | fun     | function                     |
 | gen     | for generate                 |
@@ -59,6 +64,7 @@ When you type a snippet in a VHDL file and hit Enter, the plugin will generate t
 | prosr   | synch process with reset     |
 | proc    | procedure                    |
 | rep     | report a message             |
+| ri      | rising_edge()                |
 | s       | signal                       |
 | si      | signed                       |
 | sid     | signed(x downto y)           |
