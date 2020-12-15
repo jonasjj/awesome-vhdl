@@ -1491,6 +1491,10 @@
 					<array>
 						<dict>
 							<key>include</key>
+							<string>#protected_body_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#function_definition_pattern</string>
 						</dict>
 						<dict>
@@ -1594,6 +1598,217 @@
 					</dict>
 					<!-- <key>name</key>
 					<string>meta.block.package.vhdl</string> -->
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#protected_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#function_prototype_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#procedure_prototype_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#type_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#subtype_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#record_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#component_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#cleanup</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>protected_body_pattern</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+						\b((?i:type))\s+
+
+						# The valid identifier $2 or the invalid one $3
+						(([a-zA-Z][a-zA-Z\d_]*)|(.+?))\s+
+
+						\b((?i:is\s+protected\s+body))\s+
+					</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.language.vhdl</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.language.vhdl</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.section.protected_body.begin.vhdl</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.invalid.identifier.vhdl</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.language.vhdl</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?x)
+						\b((?i:end\s+protected\s+body))
+
+						# Optional identifier
+						(\s+((\3)|(.+?)))?
+
+						(?=\s*;)
+						</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.language.vhdl</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.section.protected_body.end.vhdl</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.mismatched.identifier.vhdl</string>
+						</dict>
+					</dict>
+					<!-- <key>name</key>
+					<string>meta.block.protected_body.vhdl</string> -->
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#function_definition_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#procedure_definition_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#type_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#subtype_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#record_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#cleanup</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>protected_pattern</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+						\b((?i:type))\s+
+
+						# The valid identifier $2 or the invalid one $3
+						(([a-zA-Z][a-zA-Z\d_]*)|(.+?))\s+
+
+						\b((?i:is\s+protected))\s+
+
+						# Not body
+						(?!(?i:body))
+					</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.language.vhdls</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.section.protected.begin.vhdl</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.invalid.identifier.vhdl</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.language.vhdl</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?x)
+						\b((?i:end\s+protected))
+
+						# Optional identifier
+						(\s+((\3)|(.+?)))?
+
+						# Not body
+						(?!(?i:body))
+
+						(?=\s*;)
+					</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.language.vhdl</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.section.protected.end.vhdl</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.mismatched.identifier.vhdl</string>
+						</dict>
+					</dict>
+					<!-- <key>name</key>
+					<string>meta.block.protected.vhdl</string> -->
 					<key>patterns</key>
 					<array>
 						<dict>
