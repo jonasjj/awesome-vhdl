@@ -79,7 +79,7 @@
 	},
 	"fun": {
 		"prefix": "fun",
-		"body": "function name(${1:params}) return ${12:boolean} is\nbegin\n\t$0\nend function;",
+		"body": "function ${1:name}(${2:params}) return ${3:boolean} is\nbegin\n\t$0\nend function;",
 		"description": "function",
 		"scope": "source.vhdl"
 	},
