@@ -1657,22 +1657,17 @@
 							<key>name</key>
 							<string>keyword.language.vhdl</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.language.vhdl</string>
-						</dict>
-						<key>4</key>
+						<key>3</key>
 						<dict>
 							<key>name</key>
 							<string>entity.name.section.protected_body.begin.vhdl</string>
 						</dict>
-						<key>5</key>
+						<key>4</key>
 						<dict>
 							<key>name</key>
 							<string>invalid.illegal.invalid.identifier.vhdl</string>
 						</dict>
-						<key>6</key>
+						<key>5</key>
 						<dict>
 							<key>name</key>
 							<string>keyword.language.vhdl</string>
