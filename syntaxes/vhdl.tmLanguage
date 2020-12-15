@@ -987,7 +987,7 @@
 						^\s*
 
 						# The word function $1
-						((?i:function))\s+
+						((?i:impure)?\s*(?i:function))\s+
 
 						(
 							# A valid normal identifier $3
@@ -1116,7 +1116,6 @@
 
 						# The word function $1
 						((?i:function))\s+
-
 						
 						(
 							# A valid normal identifier $3
