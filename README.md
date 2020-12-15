@@ -6,9 +6,10 @@ VHDL support for Visual Studio Code
 
 I've forked my favorite VHDL plugin to make it better. Save time by using this plugin to generate the initial project files for you!
 
-## What's new in version 1.2.7
-- **ri** - rising_edge() snippet
-- **fa** - falling_edge() snippet
+## What's new in version 1.2.8
+* Fixed syntax highlighting / tag matching for:
+    - Impure function
+    - Protected type
 
 ## Demo video
 
