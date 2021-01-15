@@ -1394,6 +1394,12 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>\b(?i:std|ieee|work|standard|textio|std_logic_1164|std_logic_arith|std_logic_misc|std_logic_signed|std_logic_textio|std_logic_unsigned|numeric_bit|numeric_std|math_complex|math_real|vital_primitives|vital_timing)\b</string>
+					<key>name</key>
+					<string>standard.library.language.vhdl</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>(\+|\-|&lt;=|=|=&gt;|:=|&gt;=|&gt;|&lt;|/|\||&amp;|(\*{1,2}))</string>
 					<key>name</key>
 					<string>keyword.operator.vhdl</string>
