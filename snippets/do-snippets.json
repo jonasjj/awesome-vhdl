@@ -88,7 +88,7 @@
 			"\t# waveform. This slows down the simulation for large designs,",
 			"\t# but it allows us to add signals to the waveform",
 			"\t# without restarting the simulation after adding them.",
-			"\tlog * -r",
+			"\tquietly catch log * -r",
 			"",
 			"\t# Run the testbench",
 			"\trun \\$runTime",
