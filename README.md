@@ -6,28 +6,12 @@ VHDL support for Visual Studio Code
 
 I've forked my favorite VHDL plugin to make it better. Save time by using this plugin to generate the initial project files for you!
 
-## What's new in version 1.2.11 (January 15, 2021)
-* Added syntax matching scope for standard libraries
-
-This change allows users that want highlighting of standard library words to add it through the user settings.
-
-Here's an example of what you need to merge into the settings.json file:
-
-```
-"editor.tokenColorCustomizations": {
-    "[Default Dark+]": {
-        "textMateRules": [
-        {
-            "name": "VHDL Standard library",
-            "scope": "standard.library.language.vhdl",
-            "settings": {
-            "foreground": "#00FFFF"
-            }
-        }
-        ]
-    }
-}
-```
+## What's new in version 1.2.12 (February 25, 2021)
+* Improved run.do ModelSim script snippet ("modelsimrundo")
+  * Less reloading of the wave window
+  * Support for nested testbench projects and wave.do files
+  * Print verbose message if wave.do file doesn't exist
+  * Fixed runtime error for designs with no signals or constants
 
 ## Demo video
 
