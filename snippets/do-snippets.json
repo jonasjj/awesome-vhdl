@@ -66,7 +66,7 @@
 			"",
 			"\t} else {",
 			"\t\t# Start a new simulation",
-			"\t\tvsim -gui -onfinish stop -msgmode both \\$tbLib.\\$tbEnt",
+			"\t\tvsim -gui -onfinish stop -msgmode both -voptargs=+acc \\$tbLib.\\$tbEnt",
 			"\t\tvariable isRestart false",
 			"\t}",
 			"",
