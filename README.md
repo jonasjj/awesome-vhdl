@@ -6,12 +6,13 @@ VHDL support for Visual Studio Code
 
 I've forked my favorite VHDL plugin to make it better. Save time by using this plugin to generate the initial project files for you!
 
-## What's new in version 1.2.12 (February 25, 2021)
-* Improved run.do ModelSim script snippet ("modelsimrundo")
-  * Less reloading of the wave window
-  * Support for nested testbench projects and wave.do files
-  * Print verbose message if wave.do file doesn't exist
-  * Fixed runtime error for designs with no signals or constants
+## What's new in version 1.2.13 (November 25, 2021)
+* Added "-voptargs=+acc" to modelsimrundo snippet to prevent Questa from removing unused signals
+* New "sh" snippet for creating a shared variable
+* New "ox" snippet for (others => 'X')
+* Changed "pro" snippet with option to delete sensitivity list after first Tab
+* Changed range of std_logic_vector in "typarr" snippet to "downto"
+* Minor improvements to other snippets
 
 ## Demo video
 
@@ -59,6 +60,7 @@ When you type a snippet in a VHDL file and hit Enter, the plugin will generate t
 | intt    | integer range x to y         |
 | o0      | (others => '0')              |
 | o1      | (others => '1')              |
+| ox      | (others => 'X')              |
 | pack    | package                      |
 | pro     | process                      |
 | proar   | asynch process with reset    |
@@ -69,6 +71,7 @@ When you type a snippet in a VHDL file and hit Enter, the plugin will generate t
 | rep     | report a message             |
 | ri      | rising_edge()                |
 | s       | signal                       |
+| sh      | shared variable              |
 | si      | signed                       |
 | sid     | signed(x downto y)           |
 | sit     | signed(x to y)               |
