@@ -137,6 +137,12 @@
 		"description": "(others => '1')",
 		"scope": "source.vhdl"
 	},
+	"ox": {
+		"prefix": "ox",
+		"body": "(others => 'X')",
+		"description": "(others => 'X')",
+		"scope": "source.vhdl"
+	},
 	"pack": {
 		"prefix": "pack",
 		"body": "package ${1:pkg} is\n\t$0\nend package;${2:\n\npackage body ${1:pck} is\n\nend package body;}",
