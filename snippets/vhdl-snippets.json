@@ -1,25 +1,25 @@
 {
 	"as": {
 		"prefix": "as",
-		"body": "assert ${1:false}\n\treport \"${2:The expression is false}\";\n$0",
+		"body": "assert ${1:false}\n\treport \"${2:The expression is false}\";$0",
 		"description": "assert default severity",
 		"scope": "source.vhdl"
 	},
 	"asw": {
 		"prefix": "asw",
-		"body": "assert ${1:false}\n\treport \"${2:The expression is false}\"\n\tseverity warning;\n$0",
+		"body": "assert ${1:false}\n\treport \"${2:The expression is false}\"\n\tseverity warning;$0",
 		"description": "assert warning",
 		"scope": "source.vhdl"
 	},
 	"ase": {
 		"prefix": "ase",
-		"body": "assert ${1:false}\n\treport \"${2:The expression is false}\"\n\tseverity error;\n$0",
+		"body": "assert ${1:false}\n\treport \"${2:The expression is false}\"\n\tseverity error;$0",
 		"description": "assert error",
 		"scope": "source.vhdl"
 	},
 	"asf": {
 		"prefix": "asf",
-		"body": "assert ${1:false}\n\treport \"${2:The expression is false}\"\n\tseverity failure;\n$0",
+		"body": "assert ${1:false}\n\treport \"${2:The expression is false}\"\n\tseverity failure;$0",
 		"description": "assert failure",
 		"scope": "source.vhdl"
 	},
@@ -181,7 +181,7 @@
 	},
 	"rep": {
 		"prefix": "rep",
-		"body": "report \"${1:This is a message}\";\n$0",
+		"body": "report \"${1:This is a message}\";$0",
 		"description": "report a message",
 		"scope": "source.vhdl"
 	},
