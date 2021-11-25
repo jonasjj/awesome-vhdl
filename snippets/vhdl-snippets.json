@@ -151,7 +151,7 @@
 	},
 	"pro": {
 		"prefix": "pro",
-		"body": "${1/(.*)/${1:/upcase}/}_PROC : process(${2:sensitivity_list})\nbegin\n\t$0\nend process;",
+		"body": "${1/(.*)/${1:/upcase}/}_PROC : process${2:(${3:sensitivity_list})}\nbegin\n\t$0\nend process;",
 		"description": "process",
 		"scope": "source.vhdl"
 	},
