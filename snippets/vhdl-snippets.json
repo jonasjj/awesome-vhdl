@@ -67,7 +67,7 @@
 	},
 	"fa": {
 		"prefix": "fa",
-		"body": "falling_edge(${1:clk}) $0",
+		"body": "falling_edge(${1:clk})$0",
 		"description": "falling_edge()",
 		"scope": "source.vhdl"
 	},
@@ -187,7 +187,7 @@
 	},
 	"ri": {
 		"prefix": "ri",
-		"body": "rising_edge(${1:clk}) $0",
+		"body": "rising_edge(${1:clk})$0",
 		"description": "rising_edge()",
 		"scope": "source.vhdl"
 	},
