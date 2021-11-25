@@ -203,6 +203,12 @@
 		"description": "signal",
 		"scope": "source.vhdl"
 	},
+	"sh": {
+		"prefix": "sh",
+		"body": "shared variable ${1:name} : ${2:ptype};$0",
+		"description": "shared variable",
+		"scope": "source.vhdl"
+	},
 	"si": {
 		"prefix": "si",
 		"body": "signed",
