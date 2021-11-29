@@ -2,7 +2,7 @@
     "name": "vhdl-by-vhdlwhiz",
     "displayName": "VHDL by VHDLwhiz",
     "description": "Snippets, templates, syntax highlighting and code completion",
-    "version": "1.2.13",
+    "version": "1.2.14",
     "publisher": "vhdlwhiz",
     "icon": "images/icon.png",
     "homepage": "https://github.com/jonasjj/awesome-vhdl/blob/master/README.md",
