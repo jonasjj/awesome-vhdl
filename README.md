@@ -6,8 +6,12 @@ VHDL support for Visual Studio Code
 
 I've forked my favorite VHDL plugin to make it better. Save time by using this plugin to generate the initial project files for you!
 
+## What's new in version 1.2.15 (January 27, 2022)
+* Added syntax highlighting for "context" keyword
+
 ## What's new in version 1.2.14 (November 29, 2021)
 * Fixed snippet list on the Details page not rendering correctly
+
 ## What's new in version 1.2.13 (November 25, 2021)
 * Added "-voptargs=+acc" to modelsimrundo snippet to prevent Questa from removing unused signals
 * New "sh" snippet for creating a shared variable
