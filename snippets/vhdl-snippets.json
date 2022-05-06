@@ -371,4 +371,11 @@
 		"description": "wait until",
 		"scope": "source.vhdl"
 	}
+	
+	"header": {
+		"prefix": "header",
+		"body": "-------------------------------------------------------------------------------\-- Title      : <title_name_here>\-- Project    : <project_name_here>\-------------------------------------------------------------------------------\-- File       : <file_name_here>.vhd\-- Author     : <author_name>\-- Company    : <company_name_here>\-- Created    : YYYY-MM-DD\-- Last update: YYYY-MM-DD\-- Platform   : <platform>\-- Standard   : VHDL'93/02\-------------------------------------------------------------------------------\-- Description: <insert_description_here>\-------------------------------------------------------------------------------\-- Copyright (c) 2022\-------------------------------------------------------------------------------\-- Revisions  :\-- Date        Version  Author  Description\-- <date>  <version>    <auth>    <description>\-------------------------------------------------------------------------------,
+		"description": "header template",
+		"scope": "source.vhdl"
+	},
 }
