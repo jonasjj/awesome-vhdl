@@ -11,13 +11,11 @@ import { VhdlCompletionItemProvider } from './VhdlSuggest';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(ctx: vscode.ExtensionContext): void {
-    //console.log('Congratulations, your extension "awesome-vhdl" is now active!');
+    
     ctx.subscriptions.push(vscode.languages.registerCompletionItemProvider(VHDL_MODE, new VhdlCompletionItemProvider(), '.', '\"'));
      vscode.languages.setLanguageConfiguration(VHDL_MODE.language, {
         indentationRules: {
-            // ^(.*\*/)?\s*\}.*$
-            decreaseIndentPattern: /^end\s+\w*$/,
-            // ^.*\{[^}'']*$
+            decreaseIndentPattern: /\send\s*\w*\s*;/,
             increaseIndentPattern: /(^|\s)(begin|then|loop|is|(when\s+\w+\s+=>))\s*$/
         },
         wordPattern: /(-?\d*\.\d\w*)|([^\`\~\!\@\#\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\?\s]+)/g,
