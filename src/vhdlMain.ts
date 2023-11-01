@@ -18,7 +18,7 @@ export function activate(ctx: vscode.ExtensionContext): void {
             // ^(.*\*/)?\s*\}.*$
             decreaseIndentPattern: /^end\s+\w*$/,
             // ^.*\{[^}'']*$
-            increaseIndentPattern: /^.*(begin|then|loop|is)$/
+            increaseIndentPattern: /(^|\s)(begin|then|loop|is)\s*$/
         },
         wordPattern: /(-?\d*\.\d\w*)|([^\`\~\!\@\#\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\?\s]+)/g,
         comments: {
