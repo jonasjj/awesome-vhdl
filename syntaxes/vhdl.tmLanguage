@@ -120,6 +120,10 @@
 					<array>
 						<dict>
 							<key>include</key>
+							<string>#block_pattern</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#function_definition_pattern</string>
 						</dict>
 						<dict>
@@ -198,6 +202,87 @@
 						<dict>
 							<key>include</key>
 							<string>#parenthetical_list</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#cleanup</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>block_pattern</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+						# From the beginning of the line
+						^\s*
+
+						(
+							([a-zA-Z][a-zA-Z0-9_]*)
+
+							# Colon
+							\s*(:)\s*
+						)?
+
+						(\s*(?i:block))
+					</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>meta.block.block.name</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.language.vhdl</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.language.vhdl</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?x)
+						# The word end $1
+						((?i:end\s+block))
+
+						# Optional identifier
+						(\s+((\2)|(.+?)))?
+
+						(?=\s*;)
+					</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.language.vhdl</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>meta.block.block.end</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.mismatched.identifier.vhdl</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.block.block</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#control_patterns</string>
 						</dict>
 						<dict>
 							<key>include</key>
