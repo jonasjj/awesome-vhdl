@@ -361,7 +361,7 @@
 	},
 	"wf": {
 		"prefix": "wf",
-		"body": "wait for ${1:clk_period * 1};$0",
+		"body": "wait for ${1:clk_period * ${2:1}};$0",
 		"description": "wait for",
 		"scope": "source.vhdl"
 	},
