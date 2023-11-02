@@ -13,6 +13,7 @@ I've forked my favorite VHDL plugin to make it better. Save time by using this p
 * Changing "wu" (wait until) snippet to use rising_edge(clk) instead of clk = '1'
 * Syntax highlighting for DEALLOCATE, FORCE, and RELEASE
 * Fixed wrong range in "typarr" (array) snippet
+* Adding support for the VHDL BLOCK statement
 
 ## Demo video
 
@@ -56,7 +57,8 @@ When you type a snippet in a VHDL file and hit Enter, the plugin will generate t
 <tr><td>fo</td><td>for loop</td></tr>
 <tr><td>fun</td><td>function</td></tr>
 <tr><td>gen</td><td>for generate</td></tr>
-<tr><td>i</td><td>if else</td></tr>
+<tr><td>ift</td><td>if-then</td></tr>
+<tr><td>ifte</td><td>if-then-else</td></tr>
 <tr><td>incr</td><td>sig <= sig + 1</td></tr>
 <tr><td>int</td><td>integer</td></tr>
 <tr><td>intd</td><td>integer range x downto y</td></tr>
