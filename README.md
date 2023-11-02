@@ -6,19 +6,13 @@ VHDL support for Visual Studio Code
 
 I've forked my favorite VHDL plugin to make it better. Save time by using this plugin to generate the initial project files for you!
 
-## What's new in version 1.2.15 (January 27, 2022)
-* Added syntax highlighting for "context" keyword
-
-## What's new in version 1.2.14 (November 29, 2021)
-* Fixed snippet list on the Details page not rendering correctly
-
-## What's new in version 1.2.13 (November 25, 2021)
-* Added "-voptargs=+acc" to modelsimrundo snippet to prevent Questa from removing unused signals
-* New "sh" snippet for creating a shared variable
-* New "ox" snippet for (others => 'X')
-* Changed "pro" snippet with option to delete sensitivity list after first Tab
-* Changed range of std_logic_vector in "typarr" snippet to "downto"
-* Minor improvements to other snippets
+## What's new in version 1.2.16 (November 2, 2023)
+* Fixing issues with auto indent after BEGIN, THEN, LOOP, IS, and WHEN statements
+* Fixing dedent that was not working after END keywords
+* Split "i" snippet into "ift" (IF-THEN) and "ifte" (IF-THEN-ELSE)
+* Changing "wu" (wait until) snippet to use rising_edge(clk) instead of clk = '1'
+* Syntax highlighting for DEALLOCATE, FORCE, and RELEASE
+* Fixed wrong range in "typarr" (array) snippet
 
 ## Demo video
 
