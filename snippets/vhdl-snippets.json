@@ -89,9 +89,15 @@
 		"description": "for generate",
 		"scope": "source.vhdl"
 	},
-	"i": {
-		"prefix": "i",
-		"body": "if ${1:true} then\n\t$0${2:\nelse\n\t}\nend if;",
+	"ift": {
+		"prefix": "ift",
+		"body": "if ${1:true} then\n\t$0\nend if;",
+		"description": "if else",
+		"scope": "source.vhdl"
+	},
+	"ifte": {
+		"prefix": "ifte",
+		"body": "if ${1:true} then\n\t$2\nelse\n\t$0\nend if;",
 		"description": "if else",
 		"scope": "source.vhdl"
 	},
