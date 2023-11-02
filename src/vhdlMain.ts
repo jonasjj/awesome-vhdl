@@ -7,6 +7,7 @@ import path = require('path');
 import cp = require('child_process');
 import { VHDL_MODE } from './vhdlMode';
 import { VhdlCompletionItemProvider } from './VhdlSuggest';
+import { registerStutterMode } from './stutterMode';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -45,6 +46,8 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
     if (vscode.window.activeTextEditor) {
     }
+
+    registerStutterMode(ctx);
 }
 
 // this method is called when your extension is deactivated
