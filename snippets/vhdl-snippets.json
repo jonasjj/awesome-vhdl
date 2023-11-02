@@ -283,7 +283,7 @@
 	},
 	"typarr": {
 		"prefix": "typarr",
-		"body": "type ${1:arr}_type is array (${2:0} to ${3: 255}) of ${4:std_logic_vector(${5:0} downto ${6:7})};",
+		"body": "type ${1:arr}_type is array (${2:0} to ${3: 255}) of ${4:std_logic_vector(${6:7} downto ${5:0})};",
 		"description": "array type",
 		"scope": "source.vhdl"
 	},
