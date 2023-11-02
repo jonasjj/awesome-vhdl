@@ -373,7 +373,7 @@
 	},
 	"wu": {
 		"prefix": "wu",
-		"body": "wait until ${1:clk = '1'};$0",
+		"body": "wait until ${1:rising_edge(clk)};",
 		"description": "wait until",
 		"scope": "source.vhdl"
 	}
