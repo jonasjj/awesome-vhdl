@@ -71,12 +71,17 @@
             }
         ],
         "configuration": {
-            "title": "VHDL",
+            "title": "VHDLwhiz",
             "properties": {
                 "vhdlwhiz.stutterModeEnabled": {
                     "type": "boolean",
                     "default": true,
                     "description": "Auto-insert '<=' or '=>' when ',,' or '..' is typed in a VHDL file"
+                },
+                "vhdlwhiz.stutterModeSpaces": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Ensure spaces before and after '<=' or '=>' when stutter mode is active."
                 }
             }
         }
