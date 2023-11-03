@@ -69,7 +69,17 @@
                 "language": "tcl",
                 "path": "./snippets/do-snippets.json"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "VHDL",
+            "properties": {
+                "vhdlwhiz.stutterModeEnabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Auto-insert '<=' or '=>' when ',,' or '..' is typed in a VHDL file"
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",

@@ -4,6 +4,13 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
     let lastChar = '';
 
     let textChangeListener = vscode.workspace.onDidChangeTextDocument(event => {
+        const configuration = vscode.workspace.getConfiguration('vhdlwhiz');
+        const stutterModeEnabled = configuration.get<boolean>('stutterModeEnabled', true);
+
+        if (!stutterModeEnabled) {
+            return;
+        }
+
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
             return; // No active editor
