@@ -17,14 +17,19 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
                     let textToInsert = '';
 
                     if (change.text === '.') {
-                        textToInsert = '=>';
+                        textToInsert = '=> ';
                     } else if (change.text === ',') {
-                        textToInsert = '<=';
+                        textToInsert = '<= ';
                     }
 
                     if (textToInsert) {
                         // Extend the range to include the character that triggered the event
-                        const rangeToReplace = new vscode.Range(change.range.start.translate(0, -1), change.range.end.translate(0, 1));
+                        let rangeToReplace = new vscode.Range(change.range.start.translate(0, -1), change.range.end.translate(0, 1));
+
+                        // Check if we're at the start of the line or the previous character is whitespace
+                        if (change.range.start.character === 1 || !isWhitespaceBefore(editor, rangeToReplace.start)) {
+                            textToInsert = ' ' + textToInsert;
+                        }
 
                         editor.edit(editBuilder => {
                             editBuilder.replace(rangeToReplace, textToInsert);
@@ -48,4 +53,14 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
     });
 
     context.subscriptions.push(textChangeListener);
+}
+
+// Helper function to determine if the character before the current position is whitespace
+function isWhitespaceBefore(editor: vscode.TextEditor, position: vscode.Position): boolean {
+    if (position.character === 0) return true; // Start of line is treated as whitespace
+
+    const rangeBeforePosition = new vscode.Range(position.translate(0, -1), position);
+    const textBeforePosition = editor.document.getText(rangeBeforePosition);
+
+    return textBeforePosition === ' ' || textBeforePosition === '\t';
 }
