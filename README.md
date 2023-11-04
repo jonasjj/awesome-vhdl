@@ -7,7 +7,7 @@ VHDL support for Visual Studio Code
 I've forked my favorite VHDL plugin to make it better. Save time by using this plugin to generate the initial project files for you!
 
 ## What's new in version 1.3.0
-* Emacs-like stutter mode
+* Emacs-like stutter mode. Type ```,,``` to quickly insert a ```<=``` symbol, ```..``` to insert ```=>```, and ```;;``` to insert ```:=```. The default trigger keys are comma, period, and semicolon. You can disable this feature or customize it through the [User Configuration Settings](#user-configuration-settings).
 
 ## What's new in version 1.2.16 (November 2, 2023)
 * Fixing issues with auto indent after BEGIN, THEN, LOOP, IS, and WHEN statements
@@ -31,8 +31,8 @@ I've forked my favorite VHDL plugin to make it better. Save time by using this p
 
 ## DO script (Tcl) snippets
 
-| Snippet       | Description                                   |
-|          ---: |                                          ---: |
+| Snippet | Description |
+| :---    | :---        |
 | modelsimrundo | Generate a run.do script for a VHDL testbench |
 
 ## VHDL snippets
@@ -113,6 +113,16 @@ When you type a snippet in a VHDL file and hit Enter, the plugin will generate t
 ## Installation
 
 Install from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vhdlwhiz.vhdl-by-vhdlwhiz) or by searching for "**vhdlwhiz.vhdl-by-vhdlwhiz**" in the Extension view (Ctrl+Shift+X) in VSCode.
+
+## User configuration settings
+
+| Setting name | Default value | Type |
+| :---         | :---          | ---: |
+| vhdlwhiz.stutterModeEnabled | true | boolean |
+| vhdlwhiz.stutterModeInsertSpaces | true | boolean |
+| vhdlwhiz.stutterModeTriggerLeftArrow | "," | string |
+| vhdlwhiz.stutterModeTriggerRightArrow | "." | string |
+| vhdlwhiz.stutterModeTriggerVariableAssignment |  ";" | string |
 
 ## License
 This extension is licensed under the MIT License. Please see the third-party notices file for details on the third-party binaries that we include with releases of this project.

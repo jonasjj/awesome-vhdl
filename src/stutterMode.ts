@@ -12,7 +12,7 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
 
         const configuration = vscode.workspace.getConfiguration('vhdlwhiz');
         const stutterModeEnabled = configuration.get<boolean>('stutterModeEnabled');
-        const insertSpaces = configuration.get<boolean>('stutterModeSpaces');
+        const insertSpaces = configuration.get<boolean>('stutterModeInsertSpaces');
         const triggerLeftArrow = configuration.get<string>('stutterModeTriggerLeftArrow');
         const triggerRightArrow = configuration.get<string>('stutterModeTriggerRightArrow');
         const triggerVariableAssignment = configuration.get<string>('stutterModeTriggerVariableAssignment');

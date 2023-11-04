@@ -78,7 +78,7 @@
                     "default": true,
                     "description": "Emacs-like stutter mode. Auto-insert '<=', '=>', or ':=' when ',,', '..', or ';;' is typed in a VHDL file"
                 },
-                "vhdlwhiz.stutterModeSpaces": {
+                "vhdlwhiz.stutterModeInsertSpaces": {
                     "type": "boolean",
                     "default": true,
                     "description": "Ensure spaces before and after '<=', '=>', or ':=' when stutter mode is active."
