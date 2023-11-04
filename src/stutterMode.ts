@@ -28,6 +28,8 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
                         textToInsert = '=>';
                     } else if (change.text === ',') {
                         textToInsert = '<=';
+                    } else if (change.text === ';') {
+                        textToInsert = ':=';
                     }
 
                     if (textToInsert) {
@@ -44,8 +46,6 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
 
                             textToInsert += ' ';
                         }
-
-
 
                         editor.edit(editBuilder => {
                             editBuilder.replace(rangeToReplace, textToInsert);
