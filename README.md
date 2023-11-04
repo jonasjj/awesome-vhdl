@@ -6,6 +6,9 @@ VHDL support for Visual Studio Code
 
 I've forked my favorite VHDL plugin to make it better. Save time by using this plugin to generate the initial project files for you!
 
+## What's new in version 1.3.0
+* Emacs-like stutter mode
+
 ## What's new in version 1.2.16 (November 2, 2023)
 * Fixing issues with auto indent after BEGIN, THEN, LOOP, IS, and WHEN statements
 * Fixing dedent that was not working after END keywords
