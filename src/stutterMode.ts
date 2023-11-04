@@ -21,16 +21,27 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
           return;
         }
 
-        // If the config values are undefined or unexpected
-        if (!insertSpaces ||
-            !triggerLeftArrow || triggerLeftArrow.length !== 1 ||
-            !triggerRightArrow || triggerRightArrow.length !== 1 ||
-            !triggerVariableAssignment || triggerVariableAssignment.length !== 1) {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor) {
             return;
         }
 
-        const editor = vscode.window.activeTextEditor;
-        if (!editor) {
+        if (insertSpaces == null || triggerLeftArrow == null ||
+            triggerRightArrow == null || triggerVariableAssignment == null) {
+            return;
+        }
+
+
+        if (triggerLeftArrow.length !== 1) {
+            vscode.window.showErrorMessage('The vhdlwhiz.triggerLeftArrow setting must be a single character');
+            return;
+        }
+        if (triggerRightArrow.length !== 1) {
+            vscode.window.showErrorMessage('The vhdlwhiz.triggerRightArrow setting must be a single character');
+            return;
+        }
+        if (triggerVariableAssignment.length !== 1) {
+            vscode.window.showErrorMessage('The vhdlwhiz.triggerVariableAssignment setting must be a single character');
             return;
         }
 
