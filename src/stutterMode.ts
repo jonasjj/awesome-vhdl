@@ -1,34 +1,53 @@
 import * as vscode from 'vscode';
 
+interface StutterModeTriggers {
+    trigger: string;
+    insert: string;
+}
+
 export function registerStutterMode(context: vscode.ExtensionContext) {
     let lastChar = '';
 
     let textChangeListener = vscode.workspace.onDidChangeTextDocument(event => {
-        const configuration = vscode.workspace.getConfiguration('vhdlwhiz');
-        const stutterModeEnabled = configuration.get<boolean>('stutterModeEnabled', true);
-        const insertSpaces = configuration.get<boolean>('stutterModeSpaces', true);
 
-        if (!stutterModeEnabled) {
+        const configuration = vscode.workspace.getConfiguration('vhdlwhiz');
+        const stutterModeEnabled = configuration.get<boolean>('stutterModeEnabled');
+        const insertSpaces = configuration.get<boolean>('stutterModeSpaces');
+        const triggerLeftArrow = configuration.get<string>('stutterModeTriggerLeftArrow');
+        const triggerRightArrow = configuration.get<string>('stutterModeTriggerRightArrow');
+        const triggerVariableAssignment = configuration.get<string>('stutterModeTriggerVariableAssignment');
+        
+        if (stutterModeEnabled !== true) {
+          return;
+        }
+
+        // If the config values are undefined or unexpected
+        if (!insertSpaces ||
+            !triggerLeftArrow || triggerLeftArrow.length !== 1 ||
+            !triggerRightArrow || triggerRightArrow.length !== 1 ||
+            !triggerVariableAssignment || triggerVariableAssignment.length !== 1) {
             return;
         }
 
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
-            return; // No active editor
+            return;
         }
 
         for (const change of event.contentChanges) {
+
             // Check if the change is a single character and no text is selected
             if (change.text.length === 1 && change.rangeLength === 0) {
+
                 // Check if the last character is the same as the current one
                 if (change.text === lastChar) {
                     let textToInsert = '';
 
-                    if (change.text === '.') {
-                        textToInsert = '=>';
-                    } else if (change.text === ',') {
+                    if (change.text === triggerLeftArrow) {
                         textToInsert = '<=';
-                    } else if (change.text === ';') {
+                    } else if (change.text === triggerRightArrow) {
+                        textToInsert = '=>';
+                    } else if (change.text === triggerVariableAssignment) {
                         textToInsert = ':=';
                     }
 
@@ -36,8 +55,8 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
                         // Extend the range to include the character that triggered the event
                         let rangeToReplace = new vscode.Range(change.range.start.translate(0, -1), change.range.end.translate(0, 1));
 
+                        // If we shall ensure that there are spaces before and after the symbol
                         if (insertSpaces) {
-                            // Ensure that there are white spaces before and after
 
                             // Check if we're at the start of the line or the previous character is whitespace
                             if (change.range.start.character === 1 || !isWhitespaceBefore(editor, rangeToReplace.start)) {
@@ -51,6 +70,7 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
                             editBuilder.replace(rangeToReplace, textToInsert);
                         }).then(success => {
                             if (success) {
+
                                 // Move the cursor after the inserted text
                                 const newPosition = rangeToReplace.start.translate(0, textToInsert.length);
                                 editor.selection = new vscode.Selection(newPosition, newPosition);

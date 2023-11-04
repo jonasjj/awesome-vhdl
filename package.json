@@ -76,13 +76,29 @@
                 "vhdlwhiz.stutterModeEnabled": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Auto-insert '<=' or '=>' when ',,' or '..' is typed in a VHDL file"
+                    "description": "Emacs-like stutter mode. Auto-insert '<=', '=>', or ':=' when ',,', '..', or ';;' is typed in a VHDL file"
                 },
                 "vhdlwhiz.stutterModeSpaces": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Ensure spaces before and after '<=' or '=>' when stutter mode is active."
+                    "description": "Ensure spaces before and after '<=', '=>', or ':=' when stutter mode is active."
+                },
+                "vhdlwhiz.stutterModeTriggerLeftArrow": {
+                    "type": "string",
+                    "default": ",",
+                    "description": "The character that triggers '<=' when typed twice in a VHDL file."
+                },
+                "vhdlwhiz.stutterModeTriggerRightArrow": {
+                    "type": "string",
+                    "default": ".",
+                    "description": "The character that triggers '=>' when typed twice in a VHDL file."
+                },
+                "vhdlwhiz.stutterModeTriggerVariableAssignment": {
+                    "type": "string",
+                    "default": ";",
+                    "description": "The character that triggers ':=' when typed twice in a VHDL file."
                 }
+                
             }
         }
     },
