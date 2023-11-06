@@ -6,8 +6,12 @@ VHDL support for Visual Studio Code
 
 I've forked my favorite VHDL plugin to make it better. Save time by using this plugin to generate the initial project files for you!
 
-## What's new in version 1.3.0
+## What's new in version 1.3.0 (November 6, 2023)
 * Emacs-like stutter mode. Type ```,,``` to quickly insert a ```<=``` symbol, ```..``` to insert ```=>```, and ```;;``` to insert ```:=```. The default trigger keys are comma, period, and semicolon. You can disable this feature or customize it through the [User Configuration Settings](#user-configuration-settings).
+
+### Emacs-like VHDL stutter mode in VSCode
+
+[![Demo of the new stutter mode feature](https://raw.githubusercontent.com/jonasjj/awesome-vhdl/master/images/youtube-thumb-stutter-mode.png)](https://youtu.be/-4ggOY36D3g)
 
 ## What's new in version 1.2.16 (November 2, 2023)
 * Fixing issues with auto indent after BEGIN, THEN, LOOP, IS, and WHEN statements
