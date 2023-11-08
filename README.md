@@ -128,5 +128,9 @@ Install from the [Visual Studio Marketplace](https://marketplace.visualstudio.co
 | vhdlwhiz.stutterModeTriggerRightArrow | "." | string |
 | vhdlwhiz.stutterModeTriggerVariableAssignment |  ";" | string |
 
+## Contact
+
+Send bug reports to [jonas@vhdlwhiz.com](mailto:jonas@vhdlwhiz.com)
+
 ## License
 This extension is licensed under the MIT License. Please see the third-party notices file for details on the third-party binaries that we include with releases of this project.
