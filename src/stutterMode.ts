@@ -1,10 +1,5 @@
 import * as vscode from 'vscode';
 
-interface StutterModeTriggers {
-    trigger: string;
-    insert: string;
-}
-
 export function registerStutterMode(context: vscode.ExtensionContext) {
 
     let textChangeListener = vscode.workspace.onDidChangeTextDocument(event => {
@@ -15,9 +10,14 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
         const triggerLeftArrow = configuration.get<string>('stutterModeTriggerLeftArrow');
         const triggerRightArrow = configuration.get<string>('stutterModeTriggerRightArrow');
         const triggerVariableAssignment = configuration.get<string>('stutterModeTriggerVariableAssignment');
-        
+
+        // If there were no changes
+        if (event.contentChanges.length === 0) {
+            return;
+        }
+
         if (stutterModeEnabled !== true) {
-          return;
+            return;
         }
 
         const editor = vscode.window.activeTextEditor;
@@ -29,7 +29,6 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
             triggerRightArrow == null || triggerVariableAssignment == null) {
             return;
         }
-
 
         if (triggerLeftArrow.length !== 1) {
             vscode.window.showErrorMessage('The vhdlwhiz.triggerLeftArrow setting must be a single character');
@@ -44,70 +43,114 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
             return;
         }
 
-        for (const change of event.contentChanges) {
+        // Spaces to insert before and after the <= => := operators
+        let insertBefore = ' ';
+        let insertAfter = ' ';
 
-            // Check if the change is a single character and no text is selected
-            if (change.text.length === 1 && change.rangeLength === 0) {
+        // If the user config says not to insert spaces
+        if (!insertSpaces) {
+            insertBefore = '';
+            insertAfter = '';
+        }
 
-                let cursorLine = change.range.start.line;
-                let cursorCharacter = change.range.start.character;
-                let lineText = editor.document.lineAt(cursorLine).text;
+        let typedChar = null;
 
-                if (cursorCharacter > 0 && lineText.charAt(cursorCharacter - 1) === change.text) {
-                    let textToInsert = '';
+        for (let index = 0; index < editor.selections.length; index++) {
+            const change = event.contentChanges[index];
 
-                    if (change.text === triggerLeftArrow) {
-                        textToInsert = '<=';
-                    } else if (change.text === triggerRightArrow) {
-                        textToInsert = '=>';
-                    } else if (change.text === triggerVariableAssignment) {
-                        textToInsert = ':=';
-                    } else {
-                        return;
-                    }
+            if (change.text.length !== 1) {
+                return;
+            }
 
-                    if (textToInsert) {
-                        // Extend the range to include the character that triggered the event
-                        let rangeToReplace = new vscode.Range(change.range.start.translate(0, -1), change.range.end.translate(0, 1));
+            const selection = editor.selections[index];
+            let textBeforeCursor = '';
+            let textTwoBeforeCursor = '';
 
-                        // If we shall ensure that there are spaces before and after the symbol
-                        if (insertSpaces) {
+            // Check if there is a character before the cursor and it's not at the start of the document
+            if (!selection.isEmpty || selection.start.character > 0) {
+                const rangeBefore = new vscode.Range(selection.start.translate(0, -1), selection.start);
+                textBeforeCursor = editor.document.getText(rangeBefore);
+            }
 
-                            // Check if we're at the start of the line or the previous character is whitespace
-                            if (change.range.start.character === 1 || !isWhitespaceBefore(editor, rangeToReplace.start)) {
-                                textToInsert = ' ' + textToInsert;
-                            }
-
-                            textToInsert += ' ';
-                        }
-
-                        editor.edit(editBuilder => {
-                            editBuilder.replace(rangeToReplace, textToInsert);
-                        }).then(success => {
-                            if (success) {
-
-                                // Move the cursor after the inserted text
-                                const newPosition = rangeToReplace.start.translate(0, textToInsert.length);
-                                editor.selection = new vscode.Selection(newPosition, newPosition);
-                            } else {
-                                vscode.window.showErrorMessage('Error inserting text.');
-                            }
-                        });
-                    }
+            // Check that the current and prev chars for all cursors match
+            if (typedChar === null) {
+                typedChar = change.text;
+            } else {
+                if (typedChar !== change.text || typedChar !== textBeforeCursor) {
+                    return;
                 }
             }
+
+            // Get the character two spots before the cursor if there are enough characters
+            if (!selection.isEmpty || selection.start.character > 1) { // Ensure there are at least two characters before the cursor
+                const rangeTwoBefore = new vscode.Range(selection.start.translate(0, -2), selection.start.translate(0, -1));
+                textTwoBeforeCursor = editor.document.getText(rangeTwoBefore);
+            }
+
+            if (textTwoBeforeCursor === ' ' || textTwoBeforeCursor === '\t') {
+                insertBefore = '';
+            }
         }
+
+        let textToInsert = '';
+
+        if (typedChar === triggerLeftArrow) {
+            textToInsert = '<=';
+        } else if (typedChar === triggerRightArrow) {
+            textToInsert = '=>';
+        } else if (typedChar === triggerVariableAssignment) {
+            textToInsert = ':=';
+        } else {
+            return;
+        }
+
+        // Add spaces before and after
+        textToInsert = insertBefore + textToInsert + insertAfter;
+
+        // Create a workspace edit for batch operations
+        const workspaceEdit = new vscode.WorkspaceEdit();
+
+        editor.selections.forEach((selection, index) => {
+            
+            if (!selection.isEmpty || index >= event.contentChanges.length) {
+                return;
+            }
+
+            // Get the corresponding change for this selection
+            const change = event.contentChanges[index];
+            if (change.text.length !== 1 || change.rangeLength !== 0) {
+                return;
+            }
+
+            // Skip if the character before the cursor doesn't match the typed character
+            let cursorLineText = editor.document.lineAt(selection.start.line).text;
+            let charBeforeCursor = cursorLineText[selection.start.character - 1];
+            if (charBeforeCursor !== change.text) {
+                return;
+            }
+
+            // Calculate the range to replace including the two typed trigger characters
+            const startPosition = selection.start.translate(0, -1);
+            const endPosition = selection.start.translate(0, 1);
+            const rangeToReplace = new vscode.Range(startPosition, endPosition);
+
+            // Add the edit to the workspaceEdit
+            workspaceEdit.replace(editor.document.uri, rangeToReplace, textToInsert);
+        });
+
+        // Apply the workspace edit
+        vscode.workspace.applyEdit(workspaceEdit).then(success => {
+            if (success) {
+                // After successful edit, move the cursors after the inserted text
+                editor.selections = editor.selections.map(selection => {
+                    return new vscode.Selection(selection.end, selection.end);
+                });
+                console.log(`Text inserted successfully for ${editor.selections.length} cursors.`);
+            } else {
+                console.log(`Error inserting text for ${editor.selections.length} cursors.`);
+            }
+        });
     });
 
     context.subscriptions.push(textChangeListener);
-}
-
-// Helper function to determine if the character before the current position is whitespace
-function isWhitespaceBefore(editor: vscode.TextEditor, position: vscode.Position): boolean {
-    if (position.character === 0) return true; // Start of line is treated as whitespace
-
-    const rangeBeforePosition = new vscode.Range(position.translate(0, -1), position);
-    const textBeforePosition = editor.document.getText(rangeBeforePosition);
-
-    return textBeforePosition === ' ' || textBeforePosition === '\t';
 }
