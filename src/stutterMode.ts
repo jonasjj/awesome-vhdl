@@ -6,7 +6,6 @@ interface StutterModeTriggers {
 }
 
 export function registerStutterMode(context: vscode.ExtensionContext) {
-    let lastChar = '';
 
     let textChangeListener = vscode.workspace.onDidChangeTextDocument(event => {
 
@@ -50,8 +49,11 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
             // Check if the change is a single character and no text is selected
             if (change.text.length === 1 && change.rangeLength === 0) {
 
-                // Check if the last character is the same as the current one
-                if (change.text === lastChar) {
+                let cursorLine = change.range.start.line;
+                let cursorCharacter = change.range.start.character;
+                let lineText = editor.document.lineAt(cursorLine).text;
+
+                if (cursorCharacter > 0 && lineText.charAt(cursorCharacter - 1) === change.text) {
                     let textToInsert = '';
 
                     if (change.text === triggerLeftArrow) {
@@ -60,6 +62,8 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
                         textToInsert = '=>';
                     } else if (change.text === triggerVariableAssignment) {
                         textToInsert = ':=';
+                    } else {
+                        return;
                     }
 
                     if (textToInsert) {
@@ -90,10 +94,6 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
                             }
                         });
                     }
-
-                    lastChar = '';
-                } else {
-                    lastChar = change.text;
                 }
             }
         }
