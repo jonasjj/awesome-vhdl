@@ -17,7 +17,7 @@ export function activate(ctx: vscode.ExtensionContext): void {
      vscode.languages.setLanguageConfiguration(VHDL_MODE.language, {
         indentationRules: {
             decreaseIndentPattern: /\send\s*\w*\s*;/,
-            increaseIndentPattern: /(^|\s)(begin|then|loop|is|(when\s+\w+\s+=>))\s*$/
+            increaseIndentPattern: /(^|\s)(begin|then|else|loop|is|(when\s+\w+\s+=>))\s*$/
         },
         wordPattern: /(-?\d*\.\d\w*)|([^\`\~\!\@\#\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\?\s]+)/g,
         comments: {
