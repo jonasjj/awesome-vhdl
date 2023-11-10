@@ -16,7 +16,7 @@ export function activate(ctx: vscode.ExtensionContext): void {
     ctx.subscriptions.push(vscode.languages.registerCompletionItemProvider(VHDL_MODE, new VhdlCompletionItemProvider(), '.', '\"'));
      vscode.languages.setLanguageConfiguration(VHDL_MODE.language, {
         indentationRules: {
-            decreaseIndentPattern: /\selse|(elsif .*then)|(end\s*\w*\s*(\w*\s*)?;)/,
+            decreaseIndentPattern: /\selse|(elsif .*\s+then)|(end\s*\w*\s*(\w*\s*)?;)/,
             increaseIndentPattern: /(^|\s)(begin|then|else|loop|is|(when\s+\w+\s+=>))\s*$/
         },
         wordPattern: /(-?\d*\.\d\w*)|([^\`\~\!\@\#\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\?\s]+)/g,
