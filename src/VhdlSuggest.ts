@@ -151,8 +151,6 @@ export class VhdlCompletionItemProvider implements vscode.CompletionItemProvider
 
             let textBeforeCursor = lineText.substring(0, position.character - 1)
             let scope = guessScope(document, position.line);
-            //console.log(scope.syntax);
-            //console.log(textBeforeCursor);
 
             switch (scope.kind) {
                 case VhdlScopeKind.Vhdl: {

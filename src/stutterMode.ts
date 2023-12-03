@@ -149,9 +149,6 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
                 editor.selections = editor.selections.map(selection => {
                     return new vscode.Selection(selection.end, selection.end);
                 });
-                console.log(`Text inserted successfully for ${editor.selections.length} cursors.`);
-            } else {
-                console.log(`Error inserting text for ${editor.selections.length} cursors.`);
             }
         });
     });
