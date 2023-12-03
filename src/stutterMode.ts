@@ -25,6 +25,10 @@ export function registerStutterMode(context: vscode.ExtensionContext) {
             return;
         }
 
+        if (editor.document.languageId !== 'vhdl') {
+            return;
+          }
+
         if (insertSpaces == null || triggerLeftArrow == null ||
             triggerRightArrow == null || triggerVariableAssignment == null) {
             return;
