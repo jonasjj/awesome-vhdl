@@ -2259,7 +2259,10 @@
 						)?
 
 						# The word process #4
-						((?i:process\b))
+						(
+							(?:postponed\s+)?
+							(?i:process\b)
+						)
 					</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -2285,7 +2288,10 @@
 						((?i:end))
 
 						# Optional word process $3
-						(\s+((?i:process)))
+						(\s+(
+							(?:postponed\s+)?
+							(?i:process)
+						))
 
 						# Optional identifier $6 or invalid identifier $7
 						(\s+((\2)|(.+?)))?
