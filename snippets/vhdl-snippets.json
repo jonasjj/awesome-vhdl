@@ -347,6 +347,12 @@
 		"description": "VHDL testbench template",
 		"scope": "source.vhdl"
 	},
+	"vunittb": {
+		"prefix": "vunittb",
+		"body": "library ieee;\nuse ieee.std_logic_1164.all;\nuse ieee.numeric_std.all;\n\nlibrary vunit_lib;\ncontext vunit_lib.vunit_context;\n\nentity ${1:dutent}_tb is\n\tgeneric (runner_cfg : string);\nend ${1:dutent}_tb;\n\narchitecture sim of ${1:dutent}_tb is\n\n\tconstant tb_logger : logger_t := get_logger(\"tb\");\n\n\tconstant clk_hz : integer := 100e6;\n\tconstant clk_period : time := 1 sec / clk_hz;\n\n\tsignal clk : std_logic := '1';\n\tsignal rst : std_logic := '1';\n\nbegin\n\n\t-- DUT : entity work.${1:dutent}(rtl)\n\t-- port map (\n\t--   clk => clk,\n\t--   rst => rst,\n\n\t-- );$0\n\n\ttest_runner_watchdog(runner, 10 us);\n\n\t-- show_all(default_logger, display_handler);\n\t-- show_all(com_logger, display_handler);\n\tshow_all(tb_logger, display_handler);\n\n\tclk <= not clk after clk_period / 2;\n\n\tSEQUENCER_PROC : process\n\tbegin\n\n\t\ttest_runner_setup(runner, runner_cfg);\n\n\t\twait for clk_period * 2;\n\t\trst <= '0';\n\n\t\tif run(\"test_case_1\") then\n\n\t\t\terror(tb_logger, \"Implement your test case here\");\n\n\t\t-- elsif run(\"test_case_2\") then\n\n\t\tend if;\n\n\t\twait for clk_period * 3;\n\t\tinfo(tb_logger, \"Test sequence completed\");\n\t\ttest_runner_cleanup(runner);\n\tend process;\n\nend architecture;",
+		"description": "VUnit testbench template",
+		"scope": "source.vhdl"
+	},
 	"w": {
 		"prefix": "w",
 		"body": "when ${1:STATE} =>\n\t$0",

@@ -6,6 +6,10 @@ VHDL support for Visual Studio Code
 
 I've forked my favorite VHDL plugin to make it better. Save time by using this plugin to generate the initial project files for you!
 
+## What's new in version 1.4.0 (March 25, 2025)
+
+New VUnit testbench template snippet. Type ```vunittb``` in an empty line VHDL file and hit Enter to create a boilerplate VUnit testbench.
+
 ## What's new in version 1.3.0 (November 6, 2023)
 * Emacs-like stutter mode. Type ```,,``` to quickly insert a ```<=``` symbol, ```..``` to insert ```=>```, and ```;;``` to insert ```:=```. The default trigger keys are comma, period, and semicolon. You can disable this feature or customize it through the [User Configuration Settings](#user-configuration-settings).
 
@@ -106,6 +110,7 @@ When you type a snippet in a VHDL file and hit Enter, the plugin will generate t
 <tr><td>v</td><td>variable</td></tr>
 <tr><td>vhdl</td><td>VHDL template</td></tr>
 <tr><td>vhdltb</td><td>VHDL testbench template</td></tr>
+<tr><td>vunittb</td><td>VUnit testbench template</td></tr>
 <tr><td>w</td><td>when STATE =></td></tr>
 <tr><td>wh</td><td>while loop</td></tr>
 <tr><td>wf</td><td>wait for</td></tr>
