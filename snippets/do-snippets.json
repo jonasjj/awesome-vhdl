@@ -1,6 +1,6 @@
 {
 	"modelsimrundo": {
-		"prefix": "modelsimrundo",
+		"prefix": ["modelsimrundo", "questarundo"],
 		"body": [
 			"# This ModelSim DO-script starts or restarts the",
 			"# simulation with or without the waveform window.",
